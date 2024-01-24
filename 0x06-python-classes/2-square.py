@@ -1,8 +1,14 @@
 #!/usr/bin/python3
-
+"""defines a Square"""
 class Square:
+    """square with private instance attribute size"""
+
 
     def __innit__(self, size=0):
+         """
+        Args:
+            size: size of square
+        """
 
 
         if type(size) is int:
