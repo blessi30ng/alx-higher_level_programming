@@ -23,7 +23,7 @@ class Square:
             raise TypeError('size must be an integer')
 
     def area(self):
-         """calculates the area of square
+        """calculates the area of square
         Returns:
             The area of the square
         """
@@ -32,7 +32,7 @@ class Square:
 
     @property
     def size(self):
-         """getter of size
+        """getter of size
         Returns:
             The size of the square
         """

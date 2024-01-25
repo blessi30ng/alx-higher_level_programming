@@ -3,7 +3,7 @@
 
 
 class Square:
- """Represents a square
+    """Represents a square
     Attributes:
         size (int): size of a side of the square
     """
@@ -34,7 +34,7 @@ class Square:
 
     @property
     def size(self):
-         """getter of size
+        """getter of size
         Returns:
             The size of the square
         """
