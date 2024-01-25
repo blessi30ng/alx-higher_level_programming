@@ -4,7 +4,7 @@
 class Square:
     """square with private instance attribute size"""
 
-    def __innit__(self, size=0):
+    def __init__(self, size=0):
          """
         initializes square
         Args:
