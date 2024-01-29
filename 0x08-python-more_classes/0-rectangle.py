@@ -2,8 +2,8 @@
 """
 Defines an empty class rectangle
 """
+
+
 class Rectangle:
-    """
-    Empty representation of rectangle
-    """
+    """Empty representation of rectangle"""
     pass
