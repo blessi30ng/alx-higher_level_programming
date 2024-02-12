@@ -88,3 +88,40 @@ class Rectangle(Base):
         str_pr = "[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}"
         str_pr = str_pr.format(self.id, self.x, self.y, self.width, self.height)
         return str_pr
+
+    def update(self, *args):
+        """Update the Rectangle"""
+        if args and len(args) != 0:
+            n = 0
+            for arg in args:
+                if n == 0:
+                    if arg is None:
+                        self.__init__(self.width, self.height, self.x, self.y)
+                    else:
+                        self.id = arg
+                elif n == 1:
+                    self.width = arg
+                elif n == 2:
+                    self.height = arg
+                elif n == 3:
+                    self.x = arg
+                elif n == 4:
+                    self.y = arg
+                n += 1
+
+        elif kwargs and len(kwargs) != 0:
+            for l, m in kwargs.items():
+                if l == "id":
+                    if m is None:
+                        self.__init__(self.width, self.height, self.x, self.y)
+                    else:
+                        self.id = m
+                elif l == "width":
+                    self.width = m
+                elif l == "height":
+                    self.height = m
+                elif l == "x":
+                    self.x = m
+                elif l == "y":
+                    self.y = m
+
