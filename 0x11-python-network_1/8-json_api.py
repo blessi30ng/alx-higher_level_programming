@@ -7,7 +7,7 @@ if __name__ == "__main__":
     letter = "" if len(sys.argv) == 1 else sys.argv[1]
     pload = {"q": letter}
 
-    re = requests.post(http://0.0.0.:5000/search_user", data=pload)
+    re = requests.post("http://0.0.0.0:5000/search_user", data=pload)
     try:
         response = re.json()
         if response == {}:
