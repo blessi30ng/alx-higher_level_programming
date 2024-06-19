@@ -2,7 +2,7 @@
 
 // script that prints 3 lines
 
-const array = ['C is fun', 'Python is cool',  'Javascript is amazing'];
+const array = ['C is fun', 'Python is cool', 'Javascript is amazing'];
 
 let i = 0;
 
