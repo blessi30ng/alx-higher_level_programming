@@ -1,22 +1,20 @@
 #!/usr/bin/python3
-""" All cities by states """
+
+import MySQLdb
+from sys import argv
 
 if __name__ == '__main__':
-    import sys
-    import MySQLdb
-
-    if len(sys.argv) != 5:
-        sys.exit('Use: 5-filter_cities.py <mysql username> <mysql password>'
-                 ' <database name> <state name>')
-
-        conn = MySQLdb.connect(host='localhost', port=3306, user=sys.argv[1],
-                            passwd=sys.argv[2], db=sys.argv[3], charset='utf8')
-        cur = conn.cursor()
-        cur.execute("SELECT cities.name FROM cities LEFT JOIN states "
-                    "ON cities.state_id = states.id WHERE states.name = %s "
-                    "ORDER BY cities.id ASC", (sys.argv[4], ))
-        query_rows = cur.fetchall()
-        cities = [row[0] for row in query_rows]
-        print(', '.join(cities))
-        cur.close()
-        conn.close()
+    conn = MySQLdb.connect(host="localhost", port=3306, user=argv[1], passwd=argv[2], db=argv[3], charset="utf-8")
+    cur = conn.cursor()
+    sql = "SELECT c.name \
+            FROM states s \
+            INNER JOIN cities as c \
+                ON c.state_id = s.id \
+            WHERE s.name LIKE %s \
+            ORDER BY c.id ASC" 
+    cur.execute(sql, (argv[4], ))
+    result = cur.fetchall()
+    for r in result:
+        print(r)
+    cur.close()
+    conn.close()
