@@ -1,4 +1,4 @@
-#!usr/bin/node
+#!i/usr/bin/node
 
 let nag = 0;
 
