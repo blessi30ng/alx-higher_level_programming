@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 
+""" state where name has an n"""
+
 import MySQLdb
 from sys import argv
 
