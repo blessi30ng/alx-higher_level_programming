@@ -10,7 +10,6 @@ import requests
 if __name__ == "__main__":
     url = argv[1]
 
-
     re = requests.get(url)
     if re.status_code >= 400:
         print("Error code: {}".format(re.status_code))

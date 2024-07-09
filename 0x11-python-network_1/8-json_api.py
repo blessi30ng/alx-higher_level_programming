@@ -11,7 +11,6 @@ if __name__ == "__main__":
     let = "" if len(argv) == 1 else argv[1]
     payload = {"q": let}
 
-
     re = requests.post("http://0.0.0.0:5000/search_user", data=payload)
     try:
         response = re.json()
